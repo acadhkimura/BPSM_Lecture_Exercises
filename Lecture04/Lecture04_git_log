@@ -1,0 +1,84 @@
+commit c314bd3935d84894700dd8d5e94bc3814a7d3a70
+Merge: dea2f20 20379a1
+Author: acadhkimura <acadhkimura@gmail.com>
+Date:   Wed Oct 7 19:44:24 2026 +0100
+
+    There were conflicts with someotherfile.sh, kept all changes
+
+commit 20379a12a69d42d5f9a3e8a8b379f7ac9898aee3
+Author: acadhkimura <acadhkimura@gmail.com>
+Date:   Wed Oct 7 19:41:07 2026 +0100
+
+    Final version of the someotherfile.sh shell script prior to merge
+
+commit dea2f208ff0c33597c44b9e3e8dbf643b72ba683
+Author: acadhkimura <acadhkimura@gmail.com>
+Date:   Wed Oct 7 19:33:22 2026 +0100
+
+    Updated contents of tar, coolscript
+
+commit 8c29b91a2ae069ddf32c35f455cc91221dde92ae
+Author: acadhkimura <acadhkimura@gmail.com>
+Date:   Wed Oct 7 19:32:37 2026 +0100
+
+    I am not sure cool script is actually any good
+
+commit 8a6092d2640d4f6f3d8c59ca53e4538555157ce8
+Author: acadhkimura <acadhkimura@gmail.com>
+Date:   Wed Oct 7 19:30:27 2026 +0100
+
+    Added my_cool_script
+
+commit fb8cf26f8764dc32d7d7609ac817fbd45ab9ee27
+Author: acadhkimura <acadhkimura@gmail.com>
+Date:   Wed Oct 7 19:29:48 2026 +0100
+
+    Third version of the someotherfile.sh shell script
+
+commit 227630191977ff44b06931e7ea804990d870c3c7
+Author: acadhkimura <acadhkimura@gmail.com>
+Date:   Wed Oct 7 19:29:11 2026 +0100
+
+    Updated version of tar
+
+commit 1a3599480a235b2735671ad4d8cd0c02ac65ba84
+Author: acadhkimura <acadhkimura@gmail.com>
+Date:   Wed Oct 7 19:28:57 2026 +0100
+
+    Second version of the someotherfile.sh shell script
+
+commit b2709f00e7aeeae779db4db654bcbd5aa37674ab
+Author: acadhkimura <acadhkimura@gmail.com>
+Date:   Wed Oct 7 19:28:19 2026 +0100
+
+    Added the someotherfile.sh shell script
+
+commit 9e24ff424e9087bf490bee7dd0a125318f606dbb
+Author: acadhkimura <acadhkimura@gmail.com>
+Date:   Wed Oct 7 19:23:58 2026 +0100
+
+    Additional motif files, and updated tar file
+
+commit 5bfbbe2d70de20ea99ae7df7ad32a6c533f2abf9
+Author: acadhkimura <acadhkimura@gmail.com>
+Date:   Wed Oct 7 19:20:58 2026 +0100
+
+    Adding intial tar file
+
+commit cd271535a46249eccdc3e08abe656b96a809da7d
+Author: acadhkimura <acadhkimura@gmail.com>
+Date:   Wed Oct 7 19:19:12 2026 +0100
+
+    CodeFiles all done and tar zipped
+
+commit 4bd359659747092c96b48c030354b0044b0bf2db
+Author: acadhkimura <acadhkimura@gmail.com>
+Date:   Wed Oct 7 19:17:15 2026 +0100
+
+    Added README.md
+
+commit 6d414c0c6a4540f12447b22d8e771cde3db26d36
+Author: acadhkimura <acadhkimura@gmail.com>
+Date:   Wed Oct 7 19:16:23 2026 +0100
+
+    First file added
