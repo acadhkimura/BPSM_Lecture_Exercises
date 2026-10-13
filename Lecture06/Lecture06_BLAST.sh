@@ -52,11 +52,10 @@ do
 	
 	# Split current line into array (just include target columns)
 	IFS=$'\t' read -ra cols <<< "$line"
+	  l4=        3      alignment
 	col5="${cols[4]}" # mismatch
-	col7="${cols[6]}" # query start
-	col8="${cols[7]}" # query end
 
-	if (( (col8 - col7) < 100 && col5 < 20 ))
+	if (( $col4 < 100 && $col5 > 20 ))
 	then
 		echo "$line"
 	fi
@@ -118,10 +117,18 @@ do
 	fi
 done
 
+# Alternatively, cut -f2,7 clean_blastoutput2.out | grep "AEI" | cut -f2
+
 # How many subject sequences have more than one HSP
 cut -f2 clean_blastoutput2.out | sort | uniq -c | awk "$1 > 1" | wc -l
+
 # What percentage of each HSP is made up of mismatches?
-#
+grep -v "#"clean_blastoutput2.out | \
+  awk '{
+HSP_mm_pc = ($5/$4) * 100 ; 
+print HSP_mm_pc;  
+       }' |  more
+
 # Allocate HSPs into a small number of different groups based on their scrores 
 
 
