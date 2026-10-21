@@ -1,0 +1,63 @@
+# List the accession numbers of hits that belong to human
+select sample_table.common_name, hit_table.accession from sample_table, hit_table where sample_table.sample_id=hit_table.sequence_id and common_name = 'human' ;
+→ abc123
+
+# Recreate the table from the start of the slides
+
+# List all the sequences with longer than 700 bases
+select sequence_table.seq from sequence_table where sequence_table.length > 700 ;
+→ AGGTC | AGTTC | GGGCA
+
+# List the common names and species names for all samples
+select common_name, scientific_name from sample_table ;
+→ human | Homo sapiens
+→ pigeon | Columba livia 
+→ red squirrel | Sciurus vulgaris
+→ fox | Vulpes vulpes 
+
+# List the accession numbers of hits whose length and score are both greater than 100
+select accession from hit_table where length > 100 and score > 100
+→  jdu544 | eky668
+
+# List the DNA of the sequences which have a hit whose score and length are both greater than 100
+select sequence_table.seq, hit_table.score, hit_table.length from sequence_table, hit_table where hit_table.score > 100 and hit_table.length > 100 and sequence_table.sample_id=hit_table.sequence_id ;
+→ Empty set
+
+# Using the BLAST data output blastoutput2.out that you generated in the BLAST lecture, try at least some of the following:
+# Change blastoutput2.out into table:
+ tail -n +6 blastoutput2.out > clean_blastoutput2.out
+ create table blastoutput2 (query_acc_ver text, subject_acc_ver text, identity_percentage FLOAT, alignment_length int, mismatches int, gap_opens int, q_start int, q_end int, s_start int, s_end int, evalue DOUBLE PRECISION, bit_score int) ;
+ LOAD DATA local INFILE '/home/s3029425/Exercises/Lecture06/clean_blastoutput2.out' INTO TABLE blastoutput2 FIELDS TERMINATED BY '\t' ;
+
+# show the HSPs with more than 20 mismatches
+select * from blastoutput2 where mismatches > 20 ;
+→ 380 rows
+
+# show the HSPs shorter than 100 amino acids and with more than 20 mismatches
+select * from blastoutput2 where alignment_length < 100 and mismatches > 20 ;
+→ 6 rows
+
+# list the first 20 HSPs that have fewer than 20 mismatches
+select * from blastoutput2 where mismatches < 20 limit 20;
+
+# how many HSPs are shorter than 100 amino acids?
+select count(*) from blastoutput2 where alignment_length < 100 ;
+→ 31 rows
+
+# list the top ten highest (best) HSPs.
+SELECT * FROM blastoutput2 ORDER BY bit_score DESC, evalue ASC LIMIT 10 ;
+
+# list the start positions of all matches where the HSP Subject accession includes the letters string "AEI"
+SELECT s_start FROM blastoutput2 WHERE subject_acc_ver LIKE '%AEI%' ;
+→ 44 rows
+
+# how many subject sequences have more than one HSP?
+SELECT COUNT(*) FROM (SELECT subject_acc_ver FROM blastoutput2 GROUP BY subject_acc_ver HAVING COUNT(*) > 1) AS hsp_multiple_counter ;
+→ 23
+
+# what percentage of each HSP is made up of mismatches?
+SELECT subject_acc_ver, alignment_length, mismatches, ((mismatches / alignment_length) * 100) AS mismatch_percentage FROM blastoutput2 ;
+
+# allocate HSPs into different groups based on their scores
+CREATE TABLE blastoutput2_subset AS SELECT * FROM blastoutput2 ORDER BY bit_score DESC, evalue ASC LIMIT 100 ;
+
