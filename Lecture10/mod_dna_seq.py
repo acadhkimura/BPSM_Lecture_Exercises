@@ -27,7 +27,7 @@ comp_dna_seq = (
         dna_seq
         .replace("A", "t")
         .replace("T", "A")
-                ("t", "T")
+        .replace("t", "T")
         .replace("C", "g")
         .replace("G", "C")
         .replace("g", "G")
