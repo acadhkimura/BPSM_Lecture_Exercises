@@ -25,10 +25,12 @@ dna_seq = "ACTGATCGATTACGTATAGTATTTGCTATCATACATATATATCGATGCGTTCAT"
 
 comp_dna_seq = (
         dna_seq
-        .replace("A", "T")
+        .replace("A", "t")
         .replace("T", "A")
-        .replace("C", "G")
+                ("t", "T")
+        .replace("C", "g")
         .replace("G", "C")
+        .replace("g", "G")
 )
 print("The complement DNA sequence is:", comp_dna_seq)
 
@@ -36,7 +38,6 @@ print("The complement DNA sequence is:", comp_dna_seq)
 # ------------------
 # Restriction fragment lengths
 # ExoRI restriction enzyme with cut motif at "G*AATTC"
-
 # Recognition site
 dna_seq = "ACTGATCGATTACGTATAGTAGAATTCTATCATACATATATATCGATGCGTTCAT"
 motif = "GAATTC"
