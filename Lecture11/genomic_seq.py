@@ -11,7 +11,7 @@ with open("plain_genomic_seq.txt") as genomic_file:
 # Exon 1 from 1st to 63rd base
 lc_exon_1 = genomic_seq[: 62]
 with open("lc_exon_1.fasta", "w") as lc_exon_1_file:
-    lc_exon_1_write = lc_exon_1_file.write(">local exon sequence 1: 1-62 (" + len(lc_exon_1) + ")\n" + lc_exon_1)    
+    lc_exon_1_write = lc_exon_1_file.write(lc_exon_1)
 
 # Exon 2 from 91st to end base
 lc_exon_2 = genomic_seq[90: ] 
