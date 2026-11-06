@@ -10,14 +10,15 @@ with open("AJ223353.fasta", "r") as remote_dna_file:
     index = 1
 
     with open("AJ223353_master.fasta", "w") as master_file:
-        for i in range(0, len(remote_dna) - window + 1, offset):
+        for i in range(0, len(remote_dna), offset):
 
             # DNA segment
             dna_window = remote_dna[i : i + window]
+            length = len(dna_window)
 
             # Calculating GC content
             gc_count = dna_window.count("G") + dna_window.count("C")
-            gc_perc = (gc_count / window)  * 100
+            gc_perc = (gc_count / length)  * 100
 
             print("DNA segment:", dna_window)
             print("GC content:", gc_perc)
