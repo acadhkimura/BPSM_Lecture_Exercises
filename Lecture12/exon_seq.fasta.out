@@ -1,0 +1,85 @@
+BLASTX 2.17.0+
+
+
+Reference: Stephen F. Altschul, Thomas L. Madden, Alejandro A.
+Schaffer, Jinghui Zhang, Zheng Zhang, Webb Miller, and David J.
+Lipman (1997), "Gapped BLAST and PSI-BLAST: a new generation of
+protein database search programs", Nucleic Acids Res. 25:3389-3402.
+
+
+
+Database: nem.fasta
+           59,832 sequences; 21,863,955 total letters
+
+
+
+Query= 
+Length=100
+                                                                      Score     E
+Sequences producing significant alignments:                          (Bits)  Value
+
+gi|324506136|gb|ADY42628.1| Unknown [Ascaris suum]                    23.9    4.0  
+gi|402583906|gb|EJW77849.1| hypothetical protein WUBG_11242, part...  23.9    4.5  
+gi|341886813|gb|EGT42748.1| hypothetical protein CAEBREN_31313 [C...  23.9    4.8  
+
+
+>gi|324506136|gb|ADY42628.1| Unknown [Ascaris suum]
+Length=750
+
+ Score = 23.9 bits (50),  Expect = 4.0, Method: Composition-based stats.
+ Identities = 9/19 (47%), Positives = 10/19 (53%), Gaps = 0/19 (0%)
+ Frame = +2
+
+Query  44   CSYSIDHAIIDRYRCIDYY  100
+            C   +DH  I RY CI  Y
+Sbjct  132  CDIHLDHPSISRYHCILQY  150
+
+
+>gi|402583906|gb|EJW77849.1| hypothetical protein WUBG_11242, 
+partial [Wuchereria bancrofti]
+Length=448
+
+ Score = 23.9 bits (50),  Expect = 4.5, Method: Composition-based stats.
+ Identities = 9/21 (43%), Positives = 14/21 (67%), Gaps = 0/21 (0%)
+ Frame = +2
+
+Query  29  SHSYACSYSIDHAIIDRYRCI  91
+           SHS  CS ++D A   R++C+
+Sbjct  76  SHSVQCSAAVDGAYCSRHKCM  96
+
+
+>gi|341886813|gb|EGT42748.1| hypothetical protein CAEBREN_31313 
+[Caenorhabditis brenneri]
+Length=505
+
+ Score = 23.9 bits (50),  Expect = 4.8, Method: Composition-based stats.
+ Identities = 8/16 (50%), Positives = 12/16 (75%), Gaps = 0/16 (0%)
+ Frame = +1
+
+Query  52  LDRSCYHRSISMHRLL  99
+           L+R C HR++ M R+L
+Sbjct  68  LNRQCVHRALKMARIL  83
+
+
+
+Lambda      K        H        a         alpha
+   0.318    0.134    0.401    0.792     4.96 
+
+Gapped
+Lambda      K        H        a         alpha    sigma
+   0.267   0.0410    0.140     1.90     42.6     43.6 
+
+Effective search space used: 534632475
+
+
+  Database: nem.fasta
+    Posted date:  Nov 2, 2026  11:41 PM
+  Number of letters in database: 21,863,955
+  Number of sequences in database:  59,832
+
+
+
+Matrix: BLOSUM62
+Gap Penalties: Existence: 11, Extension: 1
+Neighboring words threshold: 12
+Window for multiple hits: 40
