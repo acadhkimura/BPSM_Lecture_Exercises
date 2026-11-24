@@ -14,8 +14,8 @@ positions_50000 = []
 for start in range(len(ecoli_50000) - window + 1):
     win = ecoli_50000[start : start + window]
     at_fraction = (win.count("A") + win.count("T")) / window
-    at_content.append(at_fraction)
-    positions.append(start)
+    at_content_50000.append(at_fraction)
+    positions_50000.append(start)
 
 plt.figure(figsize = (20,10))
 plt.plot(positions_50000, at_content_50000, label = "AT content")
@@ -27,7 +27,7 @@ plt.savefig("Ecoli_50000_AT.png", transparent = True)
 plt.show()
 
 
-ecoli_100000 = open("/localdisk/data/BPSM/Lecture19/exolit.txt").read().replace("\n", ""),upper()[0:100000]
+ecoli_100000 = open("/localdisk/data/BPSM/Lecture19/ecoli.txt").read().replace("\n", "").upper()[0:100000]
 
 at_content_100000 = []
 positions_100000 = []
@@ -48,7 +48,7 @@ plt.savefig("Ecoli_100000_AT.png", transparent = True)
 plt.show()
 
 
-ecoli_whole = open("/localdisk/data/BPSM/Lecture19/exolit.txt").read().replace("\n", ""),upper()
+ecoli_whole = open("/localdisk/data/BPSM/Lecture19/ecoli.txt").read().replace("\n", "").upper()
 
 at_content_whole = []
 positions_whole = []
